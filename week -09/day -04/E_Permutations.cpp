@@ -14,7 +14,8 @@ int32_t main ()
 {
     int n;
     cin>>n;
-    if(n<4) cout<<"NO SOLUTION"<<endl;
+    if(n==1) cout<<1<<endl;
+    else if(n<4) cout<<"NO SOLUTION"<<endl;
     else {
         int k = n/2;
         for(int i=k+1;i<=n;i++) {
