@@ -67,18 +67,15 @@ int32_t main() {
             for(int i=0;i<=mid;i++) {
                 update(1,1,n,qu[i]);
             }
-            bool ans = false;
             for(int i=0;i<m;i++) {
                 int left = v[i].first, right = v[i].second;
                 int sz = right-left+1;
                 int oc = query(1,1,n,left,right);
-                int zc = sz - oc;
-                if(oc>zc) {
-                    ans = true;
-                    break;
+                if(oc*2>sz) {
+                    return true;
                 }
             }
-            return ans;
+            return false;
         };
 
         int l = 0,r=q-1,mid,ans = -1;
