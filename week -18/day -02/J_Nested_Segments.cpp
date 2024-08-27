@@ -10,10 +10,8 @@ template <typename T> using pbds = tree<T, null_type, less_equal<T>, rb_tree_tag
 #define endl '\n'
 
 bool cmp(const tuple<int,int,int> a , const tuple<int,int,int> b) {
-    if(get<0>(a)>get<0>(b)) return false;
-    else if(get<0>(a)<get<0>(b)) return true;
-    else if(get<1>(a)<get<1>(b)) return false;
-    else return true;
+    if(get<0>(a)==get<0>(b)) return get<1>(a)>get<1>(b);
+    else return get<0>(a)<get<0>(b);
 }
 
 int32_t main() 
@@ -32,7 +30,6 @@ int32_t main()
     int last = get<1>(v.front());
     int last_ind = get<2>(v.front());
     bool flag = false;
-    
     for(int i=1;i<n;i++) {
         int x = get<1>(v[i]);
         if(x<=last) {
